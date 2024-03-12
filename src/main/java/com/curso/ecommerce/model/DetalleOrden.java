@@ -16,6 +16,7 @@ public class DetalleOrden {
     public DetalleOrden() {
     }
 
+
     public DetalleOrden(Integer id, String nombre, double cantidad, double precio, double total) {
         this.id = id;
         this.nombre = nombre;
