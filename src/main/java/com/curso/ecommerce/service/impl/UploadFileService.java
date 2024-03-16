@@ -1,4 +1,4 @@
-package com.curso.ecommerce.service;
+package com.curso.ecommerce.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
