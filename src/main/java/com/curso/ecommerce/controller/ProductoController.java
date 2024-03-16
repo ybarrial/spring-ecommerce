@@ -29,16 +29,6 @@ public class ProductoController {
         return "productos/show";
     }
 
-    @GetMapping("/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model) {
-        Producto producto;
-        Optional<Producto> optionalProducto = productoService.get(id);
-        producto = optionalProducto.get();
-        LOGGER.info("Producto buscado: {}", producto);
-        model.addAttribute("producto", producto);
-        return "productos/edit";
-    }
-
     @GetMapping("/create")
     public String create() {
         return "productos/create";
@@ -51,6 +41,16 @@ public class ProductoController {
         producto.setUsuario(u);
         productoService.save(producto);
         return "redirect:/productos";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        Producto producto;
+        Optional<Producto> optionalProducto = productoService.get(id);
+        producto = optionalProducto.get();
+        LOGGER.info("Producto buscado: {}", producto);
+        model.addAttribute("producto", producto);
+        return "productos/edit";
     }
 
     @PostMapping("/update")
