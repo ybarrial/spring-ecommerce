@@ -2,7 +2,7 @@ package com.curso.ecommerce.service.impl;
 
 import com.curso.ecommerce.model.Producto;
 import com.curso.ecommerce.repository.IProductoRepository;
-import com.curso.ecommerce.service.ProductoService;
+import com.curso.ecommerce.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductoServiceImpl implements ProductoService {
+public class ProductoServiceImpl implements IProductoService {
 
     @Autowired
     private IProductoRepository productoRepository;
