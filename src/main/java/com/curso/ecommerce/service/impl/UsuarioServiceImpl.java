@@ -1,7 +1,7 @@
 package com.curso.ecommerce.service.impl;
 
 import com.curso.ecommerce.model.Usuario;
-import com.curso.ecommerce.repository.UsuarioRepository;
+import com.curso.ecommerce.repository.IUsuarioRepository;
 import com.curso.ecommerce.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private IUsuarioRepository usuarioRepository;
 
 
     @Override
