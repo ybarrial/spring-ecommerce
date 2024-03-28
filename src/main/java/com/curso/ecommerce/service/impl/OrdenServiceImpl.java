@@ -1,6 +1,7 @@
 package com.curso.ecommerce.service.impl;
 
 import com.curso.ecommerce.model.Orden;
+import com.curso.ecommerce.model.Usuario;
 import com.curso.ecommerce.repository.IOrdenRepository;
 import com.curso.ecommerce.service.IOrdenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,11 @@ public class OrdenServiceImpl implements IOrdenService {
         }
 
         return numeroConcatenado;
+    }
+
+    @Override
+    public List<Orden> findByUsuario(Usuario usuario) {
+        return ordenRepository.findByUsuario(usuario);
     }
 
 }
