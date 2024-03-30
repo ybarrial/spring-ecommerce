@@ -1,6 +1,7 @@
 package com.curso.ecommerce.controller;
 
 import com.curso.ecommerce.model.Producto;
+import com.curso.ecommerce.service.IOrdenService;
 import com.curso.ecommerce.service.IProductoService;
 import com.curso.ecommerce.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class AdministradorController {
     private IProductoService productoService;
     @Autowired
     private IUsuarioService usuarioService;
+    @Autowired
+    private IOrdenService ordenService;
 
     @GetMapping("")
     public String home(Model model) {
@@ -31,6 +34,12 @@ public class AdministradorController {
     public String usuarios(Model model) {
         model.addAttribute("usuarios", usuarioService.findAll());
         return "administrador/usuarios";
+    }
+
+    @GetMapping("/ordenes")
+    public String ordenes(Model model) {
+        model.addAttribute("ordenes", ordenService.findAll());
+        return "administrador/ordenes";
     }
 
 }
